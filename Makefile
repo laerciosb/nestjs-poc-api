@@ -12,3 +12,6 @@ up:
 
 down:
 	${DCMP_TEST} down || ${DCMP} down
+
+redis:
+	docker-compose exec redisdb redis-cli

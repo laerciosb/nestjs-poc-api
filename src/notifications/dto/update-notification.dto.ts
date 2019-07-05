@@ -1,4 +1,5 @@
-import { IsOptional } from 'class-validator';
+import { IsOptional, IsIn } from 'class-validator';
+import { NotificationStatus } from '../notification-status.enum';
 
 export class UpdateNotificationDto {
   @IsOptional()
@@ -9,4 +10,8 @@ export class UpdateNotificationDto {
 
   @IsOptional()
   message: string;
+
+  @IsOptional()
+  @IsIn([NotificationStatus.READ])
+  status: NotificationStatus;
 }
